@@ -1,11 +1,15 @@
 import { createContext } from 'react';
 
 interface AuthContext {
-  user: string
-  updateUser?: (user : any ) => void
+  isAuthenticated: boolean
+  user: any
+  login: (username : any , password : any) => void
+  logout: () => void
 }
 
 export const AuthContext = createContext<AuthContext>({
-    user: '',
-    updateUser: () => {}
+    isAuthenticated: false,
+    user: null,
+    login: () => {},
+    logout: () => {}
 });

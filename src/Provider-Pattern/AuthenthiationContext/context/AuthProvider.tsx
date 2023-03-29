@@ -5,15 +5,28 @@ interface Props {
     children: ReactNode
 }
 export const AuthProvider = ({ children } : Props) => {
-  const [userState, setUserState] = useState<string>('')
-  const updateUser = (user : any) => {
-    setUserState(user);
+  const [userState, setUserState] = useState({
+    isAuthenticated: false,
+    user: null
+  })
+
+  const login = (username : any , password : any) => {
+    const isAuthenticated = true
+    const user : any = { username, email: 'sample@example.com' }
+    setUserState({ ...userState, isAuthenticated, user })
   }
+ 
+  const logout = () => {
+    setUserState({ ...useState, isAuthenticated: false, user: null})
+  }
+  const { isAuthenticated, user } = userState
   return (
-    <AuthContext.Provider value={{ userState , updateUser } as any}>
+    <AuthContext.Provider value={{ isAuthenticated , user, login, logout } as any}>
       { children }
     </AuthContext.Provider>
   );
 };
 
 export const UserConsumer = AuthContext.Consumer;
+
+
