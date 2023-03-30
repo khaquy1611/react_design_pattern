@@ -14,45 +14,57 @@ import AuthContent from './Provider-Pattern/AuthenthiationContext/AuthContent'
 import FancyDiv from './JSX-Spead/FancyDiv'
 import GirlFreindContent from './Render-Props/GirlFreindContent'
 import CounterRenderProps from './Render-Props/Counter/Counter'
+import {
+  ImageWithHoverOpacity1,
+  ImageWithHoverOpacity2,
+} from './Higher-Order-Function-Components/Components/Image/Image'
+import DisplayDataWithLoader from './Higher-Order-Function-Components/Components/Image/DisplayData/DisplayData'
+import Listings from './Hook-Pattern/custemHook/Listings'
 const App = () => {
   return (
-    <CounterRenderProps
-      render={(data: any) => {
-        //Nhận giá trị trả vê từ Counter
-        //qua props render.
-        const { count, increment, decrement } = data
-        return (
-          <>
-            <p>Giá trị {count}</p>
-            <button onClick={increment}>Tăng</button>
-            <button onClick={decrement}>Giảm</button>
-          </>
-        )
-      }}
-    />
-    // <GirlFreindContent />
-    // <FancyDiv data-id="my-fancy-div" className="fancy-div" />
-    // <AuthProvider>
-    //   <AuthContent />
-    // </AuthProvider>
-    // <div className="App">
-    //   <div className="light">
-    //     <AppProvider>
-    //       <Theme />
-    //       <Language />
-    //       <Content />
-    //     </AppProvider>
-    //   </div>
-    // </div>
-
-    // <TvShowsContainer />
-    // <Switch />
-    // <CounterProvider>
-    //   <Counter />
-    // </CounterProvider>
-    // <ParentComponent />
-    // <Toggle />
+    <>
+      {/* <ImageWithHoverOpacity1 />
+      <ImageWithHoverOpacity2 /> */}
+      <Listings />
+      {/* <DisplayDataWithLoader url="https://jsonplaceholder.typicode.com/posts" /> */}
+    </>
   )
+  // <CounterRenderProps
+  //   render={(data: any) => {
+  //     //Nhận giá trị trả vê từ Counter
+  //     //qua props render.
+  //     const { count, increment, decrement } = data
+  //     return (
+  //       <>
+  //         <p>Giá trị {count}</p>
+  //         <button onClick={increment}>Tăng</button>
+  //         <button onClick={decrement}>Giảm</button>
+  //       </>
+  //     )
+  //   }}
+  // />
+  // <GirlFreindContent />
+  // <FancyDiv data-id="my-fancy-div" className="fancy-div" />
+  // <AuthProvider>
+  //   <AuthContent />
+  // </AuthProvider>
+  // <div className="App">
+  //   <div className="light">
+  //     <AppProvider>
+  //       <Theme />
+  //       <Language />
+  //       <Content />
+  //     </AppProvider>
+  //   </div>
+  // </div>
+
+  // <TvShowsContainer />
+  // <Switch />
+  // <CounterProvider>
+  //   <Counter />
+  // </CounterProvider>
+  // <ParentComponent />
+  // <Toggle />
 }
 
 export default App
