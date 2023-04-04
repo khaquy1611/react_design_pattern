@@ -8,7 +8,6 @@ import ParentComponent from './Lifting-State-Up/ParentComponent'
 import Counter from './Provider-Pattern/useReducer/Counter'
 import CounterProvider from './Provider-Pattern/useReducer/CounterProvider'
 import TvShowsContainer from './Presentational-and-Container-Pattern/TvShowsContainer'
-import Switch from './Compound-Components-Pattern/Switch'
 import { AuthProvider } from './Provider-Pattern/AuthenthiationContext/context/AuthProvider'
 import AuthContent from './Provider-Pattern/AuthenthiationContext/AuthContent'
 import FancyDiv from './JSX-Spead/FancyDiv'
@@ -20,12 +19,27 @@ import {
 } from './Higher-Order-Function-Components/Components/Image/Image'
 import DisplayDataWithLoader from './Higher-Order-Function-Components/Components/Image/DisplayData/DisplayData'
 import Listings from './Hook-Pattern/custemHook/Listings'
+import { Card } from './Compoud-Component/Card/Card'
 const App = () => {
+  const onThisClick = e => {
+    console.log(e.target)
+    alert('You just clicked me!')
+  }
   return (
     <>
       {/* <ImageWithHoverOpacity1 />
       <ImageWithHoverOpacity2 /> */}
-      <Listings />
+      {/* <Listings /> */}
+      <Card>
+        <Card.Title>Hello There!</Card.Title>
+        <Card.Text>This is some text</Card.Text>
+        <Card.Body>
+          This card was created with the compound component pattern
+        </Card.Body>
+        <Card.ButtonContainer>
+          <Card.Button onClick={onThisClick}>This is a button</Card.Button>
+        </Card.ButtonContainer>
+      </Card>
       {/* <DisplayDataWithLoader url="https://jsonplaceholder.typicode.com/posts" /> */}
     </>
   )
