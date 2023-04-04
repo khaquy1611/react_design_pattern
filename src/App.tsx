@@ -21,7 +21,7 @@ import DisplayDataWithLoader from './Higher-Order-Function-Components/Components
 import Listings from './Hook-Pattern/custemHook/Listings'
 import { Card } from './Compoud-Component/Card/Card'
 const App = () => {
-  const onThisClick = e => {
+  const onThisClick = (e: any) => {
     console.log(e.target)
     alert('You just clicked me!')
   }
